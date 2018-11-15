@@ -153,4 +153,13 @@ config SAMPLE_STATX
 	help
 	  Build example userspace program to use the new extended-stat syscall.
 
+config SAMPLE_VFIO_MDEV_KLOG_WRITER
+	tristate "Build VFIO klog_writer example mediated device sample code -- loadable modules only"
+	depends on VFIO_MDEV_DEVICE && m
+	help
+	  Build a virtual PCI tty sample driver for use as a VFIO
+	  mediated device. The device is writing string to the kernel log.
+          The device passed through to a virtual machine allows to write
+          strings to its host kernel log.
+
 endif # SAMPLES
